@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 import { useState } from 'react';
 import logo from './logo.svg';
-import './styles/App.scss';
+import './_styles/App.scss';
 
 export const App = () => {
   const [num, setNum] = useState(0);
@@ -33,3 +33,4 @@ export const App = () => {
 }
 
 export default App;
+
