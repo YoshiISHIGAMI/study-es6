@@ -1,7 +1,12 @@
+import { useState } from 'react';
 import logo from './logo.svg';
-import './styles/App.css';
+import './styles/App.scss';
 
-function App() {
+export const App = () => {
+  const [num, setNum] = useState(0);
+  const onClickButton = () => {
+    setNum(num + 1);
+  }
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +23,10 @@ function App() {
           Learn React
         </a>
       </header>
+      <p className='counter'>{num}</p>
+      <p>
+        <button onClick={onClickButton}>Click</button>
+      </p>
     </div>
   );
 }
