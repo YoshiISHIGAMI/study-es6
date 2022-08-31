@@ -1,13 +1,19 @@
-import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './_styles/App.scss';
 
 export const App = () => {
+  console.log('レンダリング');
+
   const [num, setNum] = useState(0);
   const onClickButton = () => {
-    setNum((prev) => prev + 1);
+    setNum((prev) => prev + 1)
   }
+
+  useEffect(() => {
+    console.log(`num が ${num} に更新されました`)
+  }, [num])
+
   return (
     <div className="App">
       <header className="App-header">
@@ -33,5 +39,5 @@ export const App = () => {
   );
 }
 
-export default App;
+// default App;
 

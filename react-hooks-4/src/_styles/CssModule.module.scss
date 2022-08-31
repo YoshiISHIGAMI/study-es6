@@ -1,0 +1,19 @@
+.container {
+  border: solid 1px #aaa;
+  border-radius: 20px;
+  padding: 8px;
+  margin: 8px;
+}
+
+.button {
+  background-color: #ddd;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+
+  &:hover {
+    background-color: #aaa;
+    color: #fff;
+    cursor: pointer;
+  }
+}
