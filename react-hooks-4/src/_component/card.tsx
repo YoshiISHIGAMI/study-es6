@@ -11,8 +11,7 @@ const style: any = {
   alignItems: "center"
 }
 
-export const Card = (props: any) => {
-  const { isAdmin } = props
+export const Card = () => {
   return (
     <div className={style}>
       <EditButton />
