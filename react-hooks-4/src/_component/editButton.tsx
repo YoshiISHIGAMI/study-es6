@@ -4,7 +4,8 @@ const style = {
   borderRadius: "8px"
 }
 
-export const editButton = () => {
+export const EditButton = (props: any) => {
+  const { isAdmin } = props
   return (
     <button style={style} disabled={!isAdmin}>
       編集

@@ -1,10 +1,21 @@
-import { editButton } from "./editButton"
+import { EditButton } from "./editButton"
 
+const style: any = {
+  width: "300px",
+  height: "200px",
+  margin: "8px",
+  borderRadius: "8px",
+  backgroundColor: "#e9dbd0",
+  display: "flex",
+  flexDirection: "colimn",
+  alignItems: "center"
+}
 
-export const CssModule = () => {
+export const Card = (props: any) => {
+  const { isAdmin } = props
   return (
-    <div className={classes.container}>
-      <button className={classes.button}>ボタン</button>
+    <div className={style}>
+      <EditButton />
     </div>
   )
 }

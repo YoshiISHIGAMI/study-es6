@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import logo from './logo.svg';
 import './_styles/App.scss';
-im
+import { Card } from './_component/card';
 
 export const App = () => {
 
@@ -15,7 +14,10 @@ export const App = () => {
   return (
     <div className="App">
       {isAdimn ? '管理者です' : '管理者ではありません'}
-      <button onClick={onClickSwitch}>切り替え</button>
+      <p>
+        <button onClick={onClickSwitch}>切り替え</button>
+      </p>
+      <Card isAdimn={isAdimn} />
     </div>
   );
 }
