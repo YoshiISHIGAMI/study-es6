@@ -8,7 +8,7 @@ const style = {
 }
 
 export const EditButton = () => {
-  const { isAdmin } = useContext(AdminFlagContext)
+  const { isAdmin }: any = useContext(AdminFlagContext)
 
   return (
     <button style={style} disabled={!isAdmin}>

@@ -6,7 +6,7 @@ import './_styles/App.scss';
 export const App = () => {
 
   // 管理者フラグ
-  const { isAdimn, setIsAdmin } = useContext(AdminFlagContext)
+  const { isAdimn, setIsAdmin }: any = useContext(AdminFlagContext)
 
   // 切り替え
   const onClickSwitch = () => setIsAdmin(!isAdimn)
@@ -18,7 +18,7 @@ export const App = () => {
       <p>
         <button onClick={onClickSwitch}>切り替え</button>
       </p>
-      <Card isAdimn={isAdimn} />
+      <Card />
     </div>
   );
 }
