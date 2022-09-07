@@ -3,6 +3,13 @@ import axios from 'axios';
 import logo from './logo.svg';
 import './App.scss';
 
+type User = {
+  id: number;
+  name: string;
+  age: number;
+  personalColor: string;
+}
+
 export const App = () => {
   return (
     <div className="App">
