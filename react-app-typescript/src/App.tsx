@@ -1,8 +1,9 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 
-function App() {
+export const App = () => {
   return (
     <div className="App">
       <header className="App-header">
