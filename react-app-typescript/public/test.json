@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "おもだ",
+    "age": 24,
+    "personalColor": "blue"
+  },
+  {
+    "id": 2,
+    "name": "社員A",
+    "age": 23,
+    "personalColor": "red"
+  },
+  {
+    "id": 3,
+    "name": "社員B",
+    "age": 22,
+    "personalColor": "black"
+  }
+]
