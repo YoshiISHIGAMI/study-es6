@@ -1,8 +1,4 @@
-type User = {
-  id: number;
-  name: string;
-  age: number;
-}
+import { User } from "../types/user"
 
 export const ListItem = (props: User) => {
   const { id, name, age } = props
