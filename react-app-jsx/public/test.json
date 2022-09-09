@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "firstName": "一郎",
+    "lastName": "おもだ",
+    "age": 24,
+    "personalColor": "blue"
+  },
+  {
+    "id": 2,
+    "lastName": "おもだ",
+    "firstName": "二郎",
+    "age": 23,
+    "personalColor": "red"
+  },
+  {
+    "id": 3,
+    "lastName": "おもだ",
+    "firstName": "三郎",
+    "age": 22,
+    "personalColor": "black"
+  }
+]
