@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+import { useFetchUsers } from './hooks/useFetchUsers';
 import './App.scss';
 
-function App() {
+export const App = () => {
+  const { userList, isLoading, isError, onClickFetchUser } = useFetchUsers();
+  console.log(userList)
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={onClickFetchUser}>
+        ユーザー取得
+      </button>
+
+      {isError && <p style={{ color: "red" }}>エラーが発生しました</p>}
+      {isLoading ? (
+        <p>データ取得中です</p>
+      ) : (userList.map(user => (
+        <p key={user.id}>{`${user.id}: ${user.name}（${user.age}）`}</p>
+      )))}
     </div>
   );
 }
