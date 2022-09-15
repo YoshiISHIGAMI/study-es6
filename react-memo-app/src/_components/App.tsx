@@ -1,30 +1,33 @@
-import { ChangeEvent, useState, FC, memo } from 'react';
+import { ChangeEvent, useState, FC, useCallback } from 'react';
 import '../_sass/App.scss';
+import { MemoList } from './MemoList';
+import { useMemoList } from '../_hooks/useMemoList';
 
 export const App: FC = () => {
 
+  const { memos, addTodo, deleateTodo } = useMemoList()
   // text box State
   const [text, setText] = useState<string>("")
-  // note list State
-  const [memos, setMemos] = useState<string[]>([])
+
 
   // Set input contents to State
-  const onChangeText = (e: ChangeEvent<HTMLInputElement>) => setText(e.target.value)
+  const onChangeText = (e: ChangeEvent<HTMLInputElement>) => {
+    // console.log(e)
+    // console.log(e.target.value)
+    setText(e.target.value)
+  }
 
   //  Add memo 
   const onClickAdd = () => {
-
-    const newMemos = [...memos]
-    newMemos.push(text)
-    setMemos(newMemos)
+    // テキストボックスの入力内容をメモ配列に追加
+    addTodo(text)
+    // テキストボックスを空に
     setText("")
   }
 
-  const onClickDelete = (index: number) => {
-    const newMemos = [...memos]
-    newMemos.splice(index, 1)
-    setMemos(newMemos)
-  }
+  const onClickDelete = useCallback((index: number) => {
+    deleateTodo(index)
+  }, [deleateTodo])
 
   return (
     <div className="App">
@@ -33,18 +36,11 @@ export const App: FC = () => {
       </h1>
 
       <p className='add-note'>
-        <input className='input-note' type="text" />
-        <button className='button'>追加</button>
+        <input className='input-note' type="text" value={text} onChange={onChangeText} />
+        <button className='button' onClick={onClickAdd}>追加</button>
       </p>
 
-      <div className='note_list'>
-        <h2>
-          notes list
-        </h2>
-        <ul>
-          <li>メモ1 <button>削除</button></li>
-        </ul>
-      </div>
+      <MemoList memos={memos} onClickDelete={onClickDelete} />
     </div>
   );
 }
