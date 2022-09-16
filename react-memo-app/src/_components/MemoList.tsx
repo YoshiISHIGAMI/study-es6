@@ -7,8 +7,6 @@ export const MemoList = (props: Props) => {
 
   const { memos, onClickDelete } = props
 
-  console.log(memos)
-
   return (
     <div className="note_list">
       <h2>
@@ -17,7 +15,7 @@ export const MemoList = (props: Props) => {
       <ul>
         {memos.map((memo, index): any => {
           return (
-            <li key={index}>
+            <li key={index} className="memo-item">
               <p>{memo}</p>
               <button onClick={() => onClickDelete(index)}>削除</button>
             </li>
